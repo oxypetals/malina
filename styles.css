@@ -1,132 +1,214 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'EB Garamond', serif;
+      position: relative;
+    }
+html, body {
+  width: 100%;
+  height: 100%;
   margin: 0;
-  overflow: hidden;
-  font-family: 'Cousine', serif; /* Set font to EB Garamond */
-  position: relative;
-  box-shadow: 5px 5px 0px 0px rgba(31, 32, 32, 1);
+  padding: 0;
+}
+html, body {
+  height: 100%;
 }
 
-body::before {
-  content: "";
+
+    #popupContainer, #savedPage {
+      position: relative;
+      z-index: 1;
+      width: 440px;
+      height: 520px;
+      padding: 0;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px;
+    justify-content: center;
+
+      opacity: 0.9; /* Set the opacity of the container to 70% */
+    }
+
+    #popupContainer label, #savedPage p {
+      margin-bottom: 8px;
+      font-family: 'Cousine', serif;
+      font-size: 20px; /* Increased font size for labels */
+    }
+
+    #popupContainer input, button {
+      padding: 6px; /* Scaled down padding for buttons */
+      margin-bottom: 10px;
+      font-family: 'Cousine', serif;
+      font-size: 14px; /* Adjusted font size for scaled-down buttons */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: 130px; /* Scaled down width for buttons */
+      height: 35px; /* Scaled down height for buttons */
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      text-decoration: none;
+      color: #2a2929;
+      font-weight: bold;
+      border: 2px solid #333333;
+      transition: 0.3s;
+      box-shadow: 5px 5px 0px 0px rgba(31, 32, 32, 1);
+      background-image: conic-gradient(
+        at 0% 0%,
+        rgba(248, 237, 212, 0.91) 76deg,
+        rgba(211, 223, 250, 0.91) 160deg,
+        rgba(235, 232, 226, 0.91) 328deg,
+        rgba(234, 241, 251, 0.91) 360deg
+      );
+    }
+
+    button:hover {
+      box-shadow: 0 0 #333;
+      color: #fff;
+      background-color: #333;
+    }
+
+  .helpLink {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 200vw;
-  height: 200vh;
-  background-image: linear-gradient(25deg, #a12152, #bd6e78, #d3afa0, #e3f1ca);
-  z-index: -1;
-  opacity: 0.8; /* Set the opacity for the entire background */
-  box-shadow: 5px 5px 0px 0px rgba(31, 32, 32, 1);
-}
-
-#popupContainer {
-  position: relative;
-  z-index: 1;
-  width: 400px; /* Adjust the width as needed */
-  padding: 20px;
-  background-color: transparent; /* Transparent background */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 200%;
-}
-
-#popupContainer label {
-  margin-bottom: 8px;
-  font-family: 'Cousine', serif; /* Set font to EB Garamond */
-}
-
-#popupContainer input {
-  width: 70%;
-  padding: 8px;
-  margin-bottom: 12px;
-  font-size: 15px;
-  border: 2px solid #333333; /* Border color similar to the button */
-  border-radius: 0px;
-  background-color: transparent; /* Transparent background */
-}
-
-#popupContainer input:focus {
-  outline: none;
-  border-color: #394725; /* Border color on focus */
-}
-
-#feedbackMessage {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  color: #0F2219;
-  font-family: 'Georgia Pro', serif; /* Set font to EB Garamond */
-  size: 20px;
-}
-
-#saveToken {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  bottom: 10px;
+  font-size: 20px;
+  font-family: 'EB Garamond', serif;
   text-decoration: none;
   color: #2a2929;
-  font-size: 18px;
-  border-radius: 0px;
-  width: 150px;
-  height: 40px;
-  font-weight: bold;
-  border: 2px solid #333333;
-  transition: 0.3s;
-  box-shadow: 5px 5px 0px 0px rgba(31, 32, 32, 1);
-  background-image: conic-gradient(
-    at 0% 0%,
-    rgba(248, 237, 212, 0.91) 76deg,
-    rgba(211, 223, 250, 0.91) 160deg,
-    rgba(235, 232, 226, 0.91) 328deg,
-    rgba(234, 241, 251, 0.91) 360deg
-  );
-}
-
-#saveToken:hover {
-  box-shadow: 0 0 #333;
-  color: #fff;
-  background-color: #333;
-}
-
-.helpLink {
-  position: fixed; /* Change from absolute to fixed */
-  cursor: pointer;
-  font-size: 20px;
-  font-family: 'EB Garamond', serif; /* Set font to EB Garamond */
+  z-index: 1000; /* Correctly placed */
 }
 
 #helpLink1 {
-  bottom: 10px;
   left: 10px;
 }
 
 #helpLink2 {
-  bottom: 10px;
   right: 10px;
 }
 
+
+    #feedbackMessage {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: #333;
+      font-family: 'Cousine', serif;
+      font-size: 14px;
+    }
+
+    #savedPageContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+#malinaIcon img {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+    }
+
+    
 #malinaIcon {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  align-items: center;
-  font-family: 'Georgia Pro', serif; /* Set font to Georgia Pro */
+  top: 10px; /* Adjust to position it inside the upper corner */
+  right: 10px; /* Adjust to align it to the right */
+  z-index: 1001; /* Ensure it's above the popup container */
 }
 
 #malinaIcon img {
-  width: 25px; /* Adjust the size of the icon */
-  height: 25px;
-  margin-right: 5px;
+  width: 25px; /* Adjust the icon size to 15px */
+  height: 25px; /* Adjust the icon size to 15px */
+  margin: 0; /* Remove any margin to ensure it fits well in the corner */
+}
+#savedPageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px; /* Space between child elements */
 }
 
-/* .malinaText {
-  font-size: 24px; Adjust the font size for the text 
-  font-family: 'Georgia Pro', serif; Set font to Georgia Pro 
-} */
+#inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between inputs and button */
+  width: 100%;
+  max-width: 400px; /* Maximum width, adjust as needed */
+}
+
+#inputContainer input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#inputContainer button {
+  { display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #2a2929;
+    font-weight: bold;
+    border: 2px solid #333333;
+    transition: 0.3s;
+    box-shadow: 5px 5px 0px 0px rgba(31, 32, 32, 1);
+    background-image: conic-gradient( at 0% 0%, rgba(248, 237, 212, 0.91) 76deg, rgba(211, 223, 250, 0.91) 160deg, rgba(235, 232, 226, 0.91) 328deg, rgba(234, 241, 251, 0.91) 360deg );
+}
+}
+
+#inputContainer button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+#savedPairsList {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between list items */
+}
+
+#savedPairsList div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0; /* Light background for list items */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#toggleSavedPage {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-top: 20px; /* Space above the toggle button */
+  background-color: #4CAF50;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#toggleSavedPage:hover {
+  background-color: #45a049;
+}
