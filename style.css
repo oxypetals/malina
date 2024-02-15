@@ -134,6 +134,7 @@ html, body {
   height: 70px; /* Adjust the icon size to 15px */
   margin: 0; /* Remove any margin to ensure it fits well in the corner */
 }
+
 #savedPageContent {
   display: flex;
   flex-direction: column;
