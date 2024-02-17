@@ -130,8 +130,8 @@ html, body {
 }
 
 #malinaIcon img {
-  width: 70px; /* Adjust the icon size to 15px */
-  height: 70px; /* Adjust the icon size to 15px */
+  width: 50px; /* Adjust the icon size to 15px */
+  height: 50px; /* Adjust the icon size to 15px */
   margin: 0; /* Remove any margin to ensure it fits well in the corner */
 }
 
