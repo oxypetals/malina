@@ -116,8 +116,8 @@ html, body {
       text-align: center;
     }
 #malinaIcon img {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       margin-top: 20px;
     }
 
@@ -129,11 +129,6 @@ html, body {
   z-index: 1001; /* Ensure it's above the popup container */
 }
 
-#malinaIcon img {
-  width: 50px; /* Adjust the icon size to 15px */
-  height: 50px; /* Adjust the icon size to 15px */
-  margin: 0; /* Remove any margin to ensure it fits well in the corner */
-}
 
 #savedPageContent {
   display: flex;
@@ -153,7 +148,6 @@ html, body {
 }
 
 #inputContainer input[type="text"] {
-  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
